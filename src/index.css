@@ -109,6 +109,21 @@ body{
 .result span{
   font-weight: 700;
 }
+.error{
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(239, 120, 120);
+}
+.alcancia{
+  width: 100%;
+  display: flex;justify-content: center;
+  align-items: center;
+}
+.alcancia img{
+  max-width: 250px;
+}
 
 @media (max-width: 768px){
   .app-title{
@@ -120,7 +135,7 @@ body{
     padding: 1rem 0;
   }
   .result-wrapper{
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   .result_image{
     justify-content: center;

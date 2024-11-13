@@ -8,12 +8,13 @@ export const CriptoSearchForm = () => {
 
   const cryptocurrencies = useCryptoStore((state) => state.cryptocurrencies)
   const fetchData = useCryptoStore((state) => state.fetchData)
+  const result = useCryptoStore((state) => state.result)
 
   const [pair, setPair] = useState<Pair>({
     currency: '',
     criptocurrency: ''
   })
-  const [error, seterror] = useState('')
+  const [error, seterror] = useState(false)
 
   const handleChange = (e:ChangeEvent<HTMLSelectElement>) => {
     setPair({
@@ -24,15 +25,16 @@ export const CriptoSearchForm = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if(Object.values(pair).includes('')){
-      seterror('Todos los campos son obligatorios')
+      seterror(true)
       return
     }
     fetchData(pair)
+    seterror(false)
   }
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {error && <ErrorMessage><p>Todos los campos son obligatorios</p></ErrorMessage>}
       <div className='field'>
         <label htmlFor="currency">Moneda:</label>
         <select 
