@@ -8,7 +8,6 @@ export const CriptoSearchForm = () => {
 
   const cryptocurrencies = useCryptoStore((state) => state.cryptocurrencies)
   const fetchData = useCryptoStore((state) => state.fetchData)
-  const result = useCryptoStore((state) => state.result)
 
   const [pair, setPair] = useState<Pair>({
     currency: '',
