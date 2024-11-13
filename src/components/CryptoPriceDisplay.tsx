@@ -18,11 +18,13 @@ export const CryptoPriceDisplay = () => {
             <>
             <h2>Cotización</h2>
             <div className='result'>
-              <img
-                src={`https://cryptocompare.com/${result.IMAGEURL}`}
-                alt='Imagen Cryptomoneda'
-              />
-              <div>
+              <div className='result_image'>
+                <img
+                  src={`https://cryptocompare.com/${result.IMAGEURL}`}
+                  alt='Imagen Cryptomoneda'
+                />
+              </div>
+              <div className='result_description'>
                 <p>El precio es de: <span>{result.PRICE}</span></p>
                 <p>Precio mas alto del día: <span>{result.HIGHDAY}</span></p>
                 <p>Preico más bajo del día: <span>{result.LOWDAY}</span></p>
